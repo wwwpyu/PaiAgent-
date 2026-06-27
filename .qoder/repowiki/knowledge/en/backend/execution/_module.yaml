@@ -1,0 +1,14 @@
+schema_version: 1
+module_path: backend/execution
+title: execution
+scope:
+    - backend/src/main/java/com/paiagent/controller/ExecutionController.java
+    - backend/src/main/java/com/paiagent/service/MinioService.java
+    - backend/src/main/java/com/paiagent/mapper/ExecutionRecordMapper.java
+    - backend/src/main/java/com/paiagent/entity/ExecutionRecord.java
+    - backend/src/main/java/com/paiagent/dto/ExecutionEvent.java
+    - backend/src/main/java/com/paiagent/dto/ExecutionRequest.java
+    - backend/src/main/java/com/paiagent/dto/ExecutionResponse.java
+source_files: []
+depends_on: []
+related_to: []

@@ -1,0 +1,1 @@
+Handles user login, logout, and token-based session validation using an in-memory store.

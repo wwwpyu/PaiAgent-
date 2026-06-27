@@ -1,0 +1,113 @@
+# 知识卡导出索引文件
+schema_version: 1
+locale: en-US
+branch: Q0DeR-MaG1C-BrAnCh-Fo2-NoN-GiT-Or-No-C0MmIt
+nodes_managed: true
+exported_at: "2026-06-27T14:22:49Z"
+modules:
+    backend:
+        dir_name: backend
+        title: backend
+        scope:
+            - backend/
+        source_files: []
+        children:
+            - backend/auth
+            - backend/execution
+            - backend/workflow_management
+        depends_on: []
+        related_to: []
+    backend/auth:
+        dir_name: Authentication & Session Management
+        title: Authentication & Session Management
+        scope:
+            - backend/src/main/java/com/paiagent/controller/AuthController.java
+            - backend/src/main/java/com/paiagent/service/AuthService.java
+            - backend/src/main/java/com/paiagent/interceptor/AuthInterceptor.java
+            - backend/src/main/java/com/paiagent/dto/LoginRequest.java
+            - backend/src/main/java/com/paiagent/dto/LoginResponse.java
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []
+    backend/execution:
+        dir_name: execution
+        title: execution
+        scope:
+            - backend/src/main/java/com/paiagent/controller/ExecutionController.java
+            - backend/src/main/java/com/paiagent/service/MinioService.java
+            - backend/src/main/java/com/paiagent/mapper/ExecutionRecordMapper.java
+            - backend/src/main/java/com/paiagent/entity/ExecutionRecord.java
+            - backend/src/main/java/com/paiagent/dto/ExecutionEvent.java
+            - backend/src/main/java/com/paiagent/dto/ExecutionRequest.java
+            - backend/src/main/java/com/paiagent/dto/ExecutionResponse.java
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []
+    backend/workflow_management:
+        dir_name: workflow_management
+        title: workflow_management
+        scope:
+            - backend/src/main/java/com/paiagent/controller/WorkflowController.java
+            - backend/src/main/java/com/paiagent/controller/NodeDefinitionController.java
+            - backend/src/main/java/com/paiagent/service/WorkflowService.java
+            - backend/src/main/java/com/paiagent/service/NodeDefinitionService.java
+            - backend/src/main/java/com/paiagent/mapper/WorkflowMapper.java
+            - backend/src/main/java/com/paiagent/mapper/NodeDefinitionMapper.java
+            - backend/src/main/java/com/paiagent/entity/Workflow.java
+            - backend/src/main/java/com/paiagent/entity/NodeDefinition.java
+            - backend/src/main/java/com/paiagent/dto/WorkflowRequest.java
+            - backend/src/main/java/com/paiagent/dto/WorkflowResponse.java
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []
+    frontend:
+        dir_name: frontend
+        title: frontend
+        scope:
+            - frontend/
+        source_files: []
+        children:
+            - frontend/auth_login
+            - frontend/main_app
+            - frontend/workflow_editor
+        depends_on: []
+        related_to: []
+    frontend/auth_login:
+        dir_name: auth_login
+        title: auth_login
+        scope:
+            - frontend/src/pages/LoginPage.tsx
+            - frontend/src/api/auth.ts
+            - frontend/src/store/authStore.ts
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []
+    frontend/main_app:
+        dir_name: main_app
+        title: main_app
+        scope:
+            - frontend/src/pages/MainPage.tsx
+            - frontend/src/App.tsx
+            - frontend/src/main.tsx
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []
+    frontend/workflow_editor:
+        dir_name: workflow_editor
+        title: workflow_editor
+        scope:
+            - frontend/src/pages/EditorPage.tsx
+            - frontend/src/components/FlowCanvas.tsx
+            - frontend/src/components/NodePanel.tsx
+            - frontend/src/components/AudioPlayer.tsx
+            - frontend/src/api/workflow.ts
+            - frontend/src/store/workflowStore.ts
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []

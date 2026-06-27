@@ -1,0 +1,13 @@
+schema_version: 1
+module_path: frontend/workflow_editor
+title: workflow_editor
+scope:
+    - frontend/src/pages/EditorPage.tsx
+    - frontend/src/components/FlowCanvas.tsx
+    - frontend/src/components/NodePanel.tsx
+    - frontend/src/components/AudioPlayer.tsx
+    - frontend/src/api/workflow.ts
+    - frontend/src/store/workflowStore.ts
+source_files: []
+depends_on: []
+related_to: []

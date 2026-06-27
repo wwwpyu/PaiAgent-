@@ -1,0 +1,10 @@
+schema_version: 1
+module_path: frontend/auth_login
+title: auth_login
+scope:
+    - frontend/src/pages/LoginPage.tsx
+    - frontend/src/api/auth.ts
+    - frontend/src/store/authStore.ts
+source_files: []
+depends_on: []
+related_to: []

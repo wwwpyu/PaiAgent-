@@ -1,0 +1,4 @@
+- Entry point: `AuthController` exposes `/api/auth/login`, `/logout`, and `/current` endpoints.
+- Service layer: `AuthService` manages a `ConcurrentHashMap`-based in-memory token store for session tracking.
+- Interception: `AuthInterceptor` implements `HandlerInterceptor` to enforce authentication on protected routes by validating tokens from headers or parameters.
+- Data Transfer: `LoginRequest` and `LoginResponse` define the contract for authentication interactions.

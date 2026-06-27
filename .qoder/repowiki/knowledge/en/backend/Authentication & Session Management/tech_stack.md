@@ -1,0 +1,1 @@
+Uses Spring Boot with Jakarta Servlet API for interceptor implementation and Lombok for DTO boilerplate reduction.

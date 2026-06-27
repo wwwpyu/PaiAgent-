@@ -1,0 +1,17 @@
+schema_version: 1
+module_path: backend/workflow_management
+title: workflow_management
+scope:
+    - backend/src/main/java/com/paiagent/controller/WorkflowController.java
+    - backend/src/main/java/com/paiagent/controller/NodeDefinitionController.java
+    - backend/src/main/java/com/paiagent/service/WorkflowService.java
+    - backend/src/main/java/com/paiagent/service/NodeDefinitionService.java
+    - backend/src/main/java/com/paiagent/mapper/WorkflowMapper.java
+    - backend/src/main/java/com/paiagent/mapper/NodeDefinitionMapper.java
+    - backend/src/main/java/com/paiagent/entity/Workflow.java
+    - backend/src/main/java/com/paiagent/entity/NodeDefinition.java
+    - backend/src/main/java/com/paiagent/dto/WorkflowRequest.java
+    - backend/src/main/java/com/paiagent/dto/WorkflowResponse.java
+source_files: []
+depends_on: []
+related_to: []

@@ -1,0 +1,12 @@
+schema_version: 1
+module_path: backend/auth
+title: Authentication & Session Management
+scope:
+    - backend/src/main/java/com/paiagent/controller/AuthController.java
+    - backend/src/main/java/com/paiagent/service/AuthService.java
+    - backend/src/main/java/com/paiagent/interceptor/AuthInterceptor.java
+    - backend/src/main/java/com/paiagent/dto/LoginRequest.java
+    - backend/src/main/java/com/paiagent/dto/LoginResponse.java
+source_files: []
+depends_on: []
+related_to: []

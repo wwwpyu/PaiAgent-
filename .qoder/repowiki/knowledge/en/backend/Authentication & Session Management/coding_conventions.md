@@ -1,0 +1,2 @@
+- Tokens are extracted from the 'Authorization' header by stripping the 'Bearer ' prefix, with a fallback to the 'token' request parameter in the interceptor.
+- DTOs use Lombok annotations (`@Data`, `@AllArgsConstructor`) to minimize boilerplate code for getters, setters, and constructors.
