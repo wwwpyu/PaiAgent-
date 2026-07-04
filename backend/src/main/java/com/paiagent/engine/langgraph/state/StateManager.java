@@ -117,6 +117,39 @@ public class StateManager {
     }
     
     /**
+     * 从状态中提取分支路径信息
+     *
+     * @param state LangGraph 状态
+     * @return 源节点 ID 到可能的目标节点 ID 列表的映射
+     */
+    @SuppressWarnings("unchecked")
+    public Map<String, java.util.List<String>> extractBranchingPaths(Map<String, Object> state) {
+        Map<String, java.util.List<String>> paths = new HashMap<>();
+        // 从 state 的分支路径元数据中提取（在 GraphBuilder 构建时注入）
+        Object branchingData = state.get("branchingPaths");
+        if (branchingData instanceof Map) {
+            paths.putAll((Map<String, java.util.List<String>>) branchingData);
+        }
+        return paths;
+    }
+
+    /**
+     * 从状态中提取实际执行的分支追踪信息
+     *
+     * @param state LangGraph 状态
+     * @return 分支节点 ID 到实际选择的目标节点 ID 列表的映射
+     */
+    @SuppressWarnings("unchecked")
+    public Map<String, String> extractBranchTaken(Map<String, Object> state) {
+        Map<String, String> branches = new HashMap<>();
+        Object branchData = state.get("branchesTaken");
+        if (branchData instanceof Map) {
+            branches.putAll((Map<String, String>) branchData);
+        }
+        return branches;
+    }
+
+    /**
      * 从状态中提取节点执行结果列表
      * 
      * @param state LangGraph 状态

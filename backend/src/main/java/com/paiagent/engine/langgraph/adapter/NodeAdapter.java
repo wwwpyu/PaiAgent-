@@ -69,14 +69,19 @@ public class NodeAdapter {
                 
                 // 更新状态
                 Map<String, Object> newStateData = new HashMap<>(stateData);
-                
+
                 // 保存节点输出
                 @SuppressWarnings("unchecked")
-                Map<String, Map<String, Object>> nodeOutputs = 
+                Map<String, Map<String, Object>> nodeOutputs =
                     (Map<String, Map<String, Object>>) newStateData.getOrDefault("nodeOutputs", new HashMap<>());
                 nodeOutputs.put(node.getId(), output);
                 newStateData.put("nodeOutputs", nodeOutputs);
-                
+
+                // 扁平化节点输出字段到顶层状态（简化条件评估）
+                for (Map.Entry<String, Object> outputEntry : output.entrySet()) {
+                    newStateData.put(outputEntry.getKey(), outputEntry.getValue());
+                }
+
                 // 更新当前输入为本节点输出（传递给下一个节点）
                 newStateData.put("currentInput", output);
                 newStateData.put("currentNodeId", node.getId());

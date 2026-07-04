@@ -2,6 +2,8 @@ package com.paiagent.dto;
 
 import lombok.Data;
 
+import java.util.Map;
+
 @Data
 public class ExecutionEvent {
     private String eventType;
@@ -73,6 +75,33 @@ public class ExecutionEvent {
         event.setStatus("RUNNING");
         event.setMessage(message);
         event.setData(data);
+        event.setTimestamp(System.currentTimeMillis());
+        return event;
+    }
+
+    /**
+     * 创建分支选择事件
+     *
+     * @param sourceNodeId  分支源节点 ID
+     * @param targetNodeId  选择的目标节点 ID
+     * @param conditionField 触发分支的条件字段
+     * @param matched       条件是否匹配
+     * @return 分支事件
+     */
+    public static ExecutionEvent branchTaken(String sourceNodeId, String targetNodeId,
+                                             String conditionField, boolean matched) {
+        ExecutionEvent event = new ExecutionEvent();
+        event.setEventType("BRANCH_TAKEN");
+        event.setNodeId(sourceNodeId);
+        event.setNodeName(conditionField);
+        event.setStatus(matched ? "MATCHED" : "FALLBACK");
+        event.setMessage("分支路由: " + sourceNodeId + " -> " + targetNodeId);
+        event.setData(Map.of(
+                "sourceNodeId", sourceNodeId,
+                "targetNodeId", targetNodeId,
+                "conditionField", conditionField,
+                "matched", matched
+        ));
         event.setTimestamp(System.currentTimeMillis());
         return event;
     }

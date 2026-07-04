@@ -97,9 +97,11 @@ public class LangGraphWorkflowEngine implements WorkflowExecutor {
             // 6. 提取输出数据
             Map<String, Object> outputData = stateManager.getFinalOutput(finalState);
             String outputDataJson = JSON.toJSONString(outputData);
-            
-            // 7. 提取节点执行结果
+
+            // 7. 提取节点执行结果和分支路径
             var nodeResultsList = stateManager.extractNodeResults(finalState, config);
+            var branchingPaths = stateManager.extractBranchingPaths(finalState);
+            var branchesTaken = stateManager.extractBranchTaken(finalState);
             
             // 8. 保存执行记录
             long endTime = System.currentTimeMillis();
@@ -143,6 +145,8 @@ public class LangGraphWorkflowEngine implements WorkflowExecutor {
             response.setNodeResults(nodeResults);
             
             response.setOutputData(outputDataJson);
+            response.setBranchingPaths(branchingPaths);
+            response.setBranchesTaken(branchesTaken);
             response.setDuration(duration);
             
             log.info("工作流执行完成: status={}, duration={}ms", status, duration);
